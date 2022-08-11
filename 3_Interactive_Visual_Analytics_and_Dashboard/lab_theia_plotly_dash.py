@@ -114,6 +114,7 @@ def get_pie_chart(entered_site):
 def get_scatter_chart(entered_site,value):
 
     if entered_site == 'ALL':
+        # value = [min_payload, max_payload]
         spacex_df_sel = spacex_df[(spacex_df['Payload Mass (kg)'] > value[0]) & 
                                   (spacex_df['Payload Mass (kg)'] < value[1])]
         fig = px.scatter(spacex_df_sel,
@@ -143,6 +144,6 @@ def get_scatter_chart(entered_site,value):
 if __name__ == '__main__':
     # app.run_server()
     # ind = np.random.randint(1, 10000, size=1)[]
-    app.run_server(port = 65524)
+    app.run_server(port = 5522)
     sys.exit() 
 
